@@ -84,6 +84,17 @@ body {
   }
 }
 
+h1{
+  font-size: 100px;
+  text-align: center;
+  padding: 1em;
+}
+h4{
+  line-height: 130%;
+  font-size: 22pt;
+  padding: 2em 4em;
+}
+
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
@@ -93,22 +104,11 @@ body {
 }
 
 /* Mugs! */
-.mug-preview{
-  background: white;
-  text-align: center;
-}
-.mug-preview img{
-  margin: 0 100px;
-}
-
-.mug-center{
-  text-align: center;
-}
 .mug-wrapper{
   display:inline-block;
   margin: 15px;
   border:5px solid #CCAC00;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .mug-img{
   height:200px;
