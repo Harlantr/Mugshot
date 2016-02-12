@@ -23,7 +23,7 @@ angular.module('mugshotApp', [
         controller: 'MainCtrl',
         activeTab: 'Home'
       })
-      .when('/about', {
+      .when('/mugs', {
         templateUrl: 'views/mugs.html',
         controller: 'MugsCtrl',
         activeTab: 'Mugs'
