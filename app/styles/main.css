@@ -1,6 +1,7 @@
 body {
   color: #e5e5e5;
   background-image: url(/images/background.jpg);
+  background-attachment: fixed;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -34,17 +35,17 @@ h4{
   cursor: pointer;
 }
 .spacer{
-  margin-top: 70px;
+  padding-top: 70px;
 }
 
 .modal-dialog {
     position: fixed;
     font-family: Arial, Helvetica, sans-serif;
-    top: 0;
+    top: -2.1em;
     left: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 99999;
-    opacity:0;
+    /*opacity:0;*/
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
@@ -54,7 +55,7 @@ h4{
 }
 .modal-dialog-open {
     display: inline-block;
-    opacity:1;
+    /*opacity:1;*/
 }
 .modal-dialog > div {
     width: 50%;
