@@ -10,9 +10,4 @@
 angular.module('mugshotApp')
   .controller('MainCtrl', function ($scope, $route) {
   	$scope.$route = $route;
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });

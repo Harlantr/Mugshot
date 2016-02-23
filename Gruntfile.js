@@ -205,9 +205,29 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          // '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
+      }
+    },
+
+    bowerInstall: {
+      target: {
+        // Point to the files that should be updated when 
+        // you run `grunt bower-install` 
+        src: [
+          'app/index.html'
+        ],
+     
+        // Optional: 
+        // --------- 
+        cwd: '',
+        dependencies: true,
+        devDependencies: true,
+        exclude: [],
+        fileTypes: {},
+        ignorePath: '',
+        overrides: {}
       }
     },
 
@@ -447,4 +467,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-bower-install');
 };

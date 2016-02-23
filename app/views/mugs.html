@@ -1,17 +1,18 @@
 <div class="spacer"></div>
-
 <div style="text-align:center">
 	<a href="#/">
-		<button class="btn-lg btn">Home</button>
+		<button class="btn btn-warning btn-lg" title="Back to Home Page">
+			<i class="fa fa-home"></i>
+			Home
+		</button>
 	</a>
 </div>
-
 <div class="spacer"></div>
-
-<div class="row-fluid">
+<div class="row-fluid" style="text-align: center;">
 	<div class="col-sm-10 col-sm-offset-1">
 		<div class="mug-wrapper" ng-repeat="mug in MugsList">
-			<img class="mug-img" ng-src="{{mug.URL}}" height="250" width="250" ng-click="openMugInfo(mug.URL, mug.Name, mug.Description)">
+			<img class="mug-img" ng-src="{{mug.URL}}" height="250" width="250" title="{{mug.Name}}" 
+			ng-click="openMugInfo(mug.URL, mug.Name, mug.Description)">
 		</div>
 	</div>
 </div>

@@ -11,10 +11,19 @@ body {
   }
 }
 
+.btn-warning{
+  background-color: #CCAC00;
+  margin-bottom: 1em;
+}
+
+  .btn-warning:hover{
+    background-color: #B79A00;
+  }
+
 h1{
   font-size: 100px;
   text-align: center;
-  padding: 1em;
+  padding: 0.5em;
 }
 h4{
   line-height: 130%;
