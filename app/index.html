@@ -5,17 +5,23 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Components -->
+    <!-- build:css(./) style/vendor.css -->
+    <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/remodal/dist/remodal.css" />
     <link rel="stylesheet" href="bower_components/remodal/dist/remodal-default-theme.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
-    <!-- My shit -->
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+     <!-- build:css style/app.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
   </head>
   <body ng-app="mugshotApp">
-    <div ng-view=""></div>
-    <!-- Components -->
+    <div ng-view=""></div>  
+    <!-- build:js(./) scripts/vendor.js -->
+    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -25,10 +31,14 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/remodal/dist/remodal.min.js"></script>
-    <!-- My shit -->
+    <script src="bower_components/remodal/dist/remodal.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/app.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/mugs.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

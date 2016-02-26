@@ -114,26 +114,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
-        ]
-      },
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
-      }
-    },
-
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -178,7 +158,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
-        src: ['<%= yeoman.app %>/index.html'],
+        src: '<%= yeoman.app %>/index.html',
         ignorePath:  /\.\.\//
       },
       test: {
@@ -208,26 +188,6 @@ module.exports = function (grunt) {
           // '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
-      }
-    },
-
-    bowerInstall: {
-      target: {
-        // Point to the files that should be updated when 
-        // you run `grunt bower-install` 
-        src: [
-          'app/index.html'
-        ],
-     
-        // Optional: 
-        // --------- 
-        cwd: '',
-        dependencies: true,
-        devDependencies: true,
-        exclude: [],
-        fileTypes: {},
-        ignorePath: '',
-        overrides: {}
       }
     },
 
@@ -285,16 +245,16 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // concat: {
-    //   dist: {}
-    // },
+    concat: {
+      dist: {}
+    },
 
     imagemin: {
       dist: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: 'images/*.{gif,jpg,png}',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -306,7 +266,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
+          dest: '<%= yeoman.dist %>/<images></images>'
         }]
       }
     },
@@ -362,8 +322,9 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'images/*.{gif,jpg,png}',
+            'styles/fonts/{,*/}*.*',
+            '*.json'
           ]
         }, {
           expand: true,
@@ -375,12 +336,11 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
-        },
-        { 
+        }, {
           expand: true,
-          cwd: '<%= yeoman.app %>/bower_components/font-awesome', 
-          src: 'fonts/*', 
-          dest: '<%= yeoman.dist %>' 
+          cwd: 'bower_components/components-font-awesome',
+          src: 'fonts/*',
+          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
@@ -414,7 +374,6 @@ module.exports = function (grunt) {
       }
     }
   });
-
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -462,11 +421,5 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
-    'build'
-  ]);
-
-  grunt.loadNpmTasks('grunt-bower-install');
+  grunt.registerTask('default', ['build']);
 };
