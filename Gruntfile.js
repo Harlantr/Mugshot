@@ -308,7 +308,7 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
-
+     
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
